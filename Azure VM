@@ -1,0 +1,17 @@
+## Check VM Status
+$ az vm show -n vmName -g resourceGroup -d --query "powerState"
+"VM deallocated"   # if VM is stopped
+
+## Start VM
+$ az vm start -n vmName -g resourceGroup
+{
+  "endTime": "2018-08-15T14:58:39.461231+00:00",
+  "error": null,
+  "name": "802d0252-0538-4cbe-8590-b95fef429e87",
+  "startTime": "2018-08-15T14:55:39.723575+00:00",
+  "status": "Succeeded"
+}
+
+## Check VM status again
+$ az vm show -n vmName -g resourceGroup -d --query "powerState"
+"VM running"
